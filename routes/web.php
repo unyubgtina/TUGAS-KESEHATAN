@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
+
+// Middleware untuk admin
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});
+
+// Middleware untuk pasien
+Route::middleware(['auth', 'role:pasien'])->group(function () {
+    Route::get('/pasien/dashboard', function () {
+        return view('pasien.dashboard');
+    })->name('pasien.dashboard');
+});
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard_admin');
+});
