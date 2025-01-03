@@ -48,7 +48,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
-$request = null; //ini untuk inisialisasi variabel request
+//$request = null; //ini untuk inisialisasi variabel request
 
 try {
     //tangkap request dan kirim response
@@ -65,9 +65,3 @@ try {
     //pastikan unutk memanggil terminate meskipun terjadi kesalahan
     $kernel->terminate($request, $response ?? null);
 }
-
-$response = $kernel->handle(
-    $request = Request::capture()
-)->send();
-
-$kernel->terminate($request, $response);

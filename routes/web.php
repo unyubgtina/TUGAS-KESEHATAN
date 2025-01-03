@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//rute untuk login
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
@@ -29,8 +31,4 @@ Route::middleware(['auth', 'role:pasien'])->group(function () {
     Route::get('/pasien/dashboard', function () {
         return view('pasien.dashboard');
     })->name('pasien.dashboard');
-});
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard_admin');
 });
