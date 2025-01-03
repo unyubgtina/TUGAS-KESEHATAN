@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,27 +14,17 @@ use App\Http\Controllers\AuthController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//Route::post('/login', [AuthController::class, 'login'])->name('login.process');
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard_admin');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-//rute untuk login
 Route::get('/login', function () {
-    return view('auth.login');
+    return view('login');
+});
+
+Route::post('/login', function (){
 })->name('login');
 
-// Middleware untuk admin
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
-});
-
-// Middleware untuk pasien
-Route::middleware(['auth', 'role:pasien'])->group(function () {
-    Route::get('/pasien/dashboard', function () {
-        return view('pasien.dashboard');
-    })->name('pasien.dashboard');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
