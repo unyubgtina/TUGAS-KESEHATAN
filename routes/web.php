@@ -13,6 +13,11 @@ use App\Http\Controllers\AuthController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Route::post('/login', [AuthController::class, 'login'])->name('login.process');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard_admin');
+});
 
 //rute untuk login
 Route::get('/login', function () {
