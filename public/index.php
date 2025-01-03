@@ -48,6 +48,24 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
+$request = null; //ini untuk inisialisasi variabel request
+
+try {
+    //tangkap request dan kirim response
+    $response = $kernel->handle(
+        $request = Request::capture()
+    )->send();
+} catch (Exception $e) {
+    //tangani kesalahan dan tampilkan pesan kesalahan
+    //anda bisa mencetak pesan kesalahan atau mencatatnya ke log
+    echo 'Error: ' . $e->getMessage();
+    //jika anda ingin menghentikan eksekusi lebih lanjut, anda bisa menggunakan exit
+    exit;
+} finally {
+    //pastikan unutk memanggil terminate meskipun terjadi kesalahan
+    $kernel->terminate($request, $response ?? null);
+}
+
 $response = $kernel->handle(
     $request = Request::capture()
 )->send();
