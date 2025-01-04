@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #6C63FF, #5A56E0);
+            background: linear-gradient(135deg, #2c3e50, #34495e); /* Warna latar belakang yang gelap dan elegan */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,7 +27,7 @@
         .login-container h1 {
             margin-bottom: 20px;
             font-size: 24px;
-            color: #333;
+            color: #2c3e50; /* Sesuaikan warna dengan tema */
         }
         .form-group {
             margin-bottom: 20px;
@@ -37,7 +37,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: 600;
-            color: #555;
+            color: #34495e; /* Warna label yang lebih gelap */
         }
         .form-group input {
             width: 100%;
@@ -47,12 +47,12 @@
             font-size: 16px;
         }
         .form-group input:focus {
-            border-color: #6C63FF;
+            border-color: #1abc9c; /* Warna biru-hijau saat fokus */
             outline: none;
-            box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+            box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
         }
         .btn-login {
-            background: #6C63FF;
+            background: #1abc9c; /* Tombol dengan warna biru-hijau */
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -62,14 +62,14 @@
             width: 100%;
         }
         .btn-login:hover {
-            background: #5A56E0;
+            background: #16a085; /* Warna lebih gelap saat hover */
         }
         .forgot-password {
             margin-top: 15px;
             font-size: 14px;
         }
         .forgot-password a {
-            color: #6C63FF;
+            color: #1abc9c; /* Warna hijau biru pada link */
             text-decoration: none;
         }
         .forgot-password a:hover {
