@@ -18,14 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Halaman Dashboard Admin
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
+Route::get('/pasien/login', function () {
+    return view('login');
+});
 
-// CRUD Dokter
-Route::resource('/admin/dokter', DokterController::class);
-
-// Halaman Dashboard Pasien
-Route::get('/pasien/dashboard', [PasienController::class, 'dashboard']);
-
-// Booking Dokter
-Route::get('/pasien/booking', [PasienController::class, 'booking']);
+//Route::post('/pasien/login', [App\Http\Controllers\PasienController::class, 'login'])->name('pasien.login');
