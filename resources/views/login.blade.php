@@ -38,8 +38,9 @@
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
         <p class="text-center mt-3">
-            Belum punya akun? <a href="{{ route('pasien.register') }}">Daftar di sini</a>
-        </p>
+            </p>
     </div>
 </body>
 </html>
+            
+        

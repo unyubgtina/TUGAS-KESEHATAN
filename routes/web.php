@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pasien/login', function () {
+Route::get('/login', function () {
     return view('login');
 });
 
-//Route::post('/pasien/login', [App\Http\Controllers\PasienController::class, 'login'])->name('pasien.login');
+Route::post('/login', [App\Http\Controllers\PasienController::class, 'login'])->name('pasien.login');
